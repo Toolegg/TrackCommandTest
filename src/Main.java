@@ -5,6 +5,9 @@ public class Main {
     public static String[] products = { "Bread", "Buckwheat", "Eggs", "Ice Cream" };
     public static int[] prices = { 50, 135, 65, 53 };
 
+    // В стоимости этих товаров каждые три товара должны стоить как два:
+    public static String[] productsOnSale = { "Bread", "Ice Cream" };
+
     public static void main(String[] args) {
         System.out.println("Welcome!");
         System.out.println("We have:");
@@ -36,10 +39,23 @@ public class Main {
         int sum = 0;
         for (int i = 0; i < products.length; i++) {
             if (counts[i] != 0) {
-                System.out.println("\t" + products[i] + " " + counts[i] + " pieces for " + (prices[i] * counts[i]) + " rub.");
-                sum += prices[i] * counts[i];
+                boolean isOnSale = false;
+                for (String saleProduct : productsOnSale) {
+                    if (products[i].equals(saleProduct)) {
+                        isOnSale = true;
+                    }
+                }
+
+                if (isOnSale) {
+                    System.out.println("\t" + products[i] + " " + counts[i] + " pieces for " + (prices[i] * (counts[i] / 3 * 2 + counts[i] % 3)) + " rub. (Sale!)");
+                    sum += prices[i] * (counts[i] / 3 * 2 + counts[i] % 3);
+                } else {
+                    System.out.println("\t" + products[i] + " " + counts[i] + " pieces for " + (prices[i] * counts[i]) + " rub.");
+                    sum += prices[i] * counts[i];
+                }
             }
         }
         System.out.println("Total: " + sum + " rub.");
     }
+
 }
