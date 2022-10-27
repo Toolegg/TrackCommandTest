@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static String[] products = { "Bread", "Buckwheat", "Eggs", "Ice Cream" };
-    public static int[] prices = { 50, 135, 65, 53 };
+    public static String[] products = { "Bread", "Buckwheat", "Eggs", "Ice Cream", "Rice", "Butter", "Cheese" };
+    public static int[] prices = { 50, 135, 65, 53, 130, 120, 150 };
 
     // В стоимости этих товаров каждые три товара должны стоить как два:
-    public static String[] productsOnSale = { "Bread", "Ice Cream" };
+    public static String[] productsOnSale = { "Bread", "Ice Cream", "Rice" };
 
     public static void main(String[] args) {
         System.out.println("Welcome!");
