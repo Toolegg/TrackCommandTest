@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
 public class Main {
-
-    public static String[] products = { "Bread", "Buckwheat", "Eggs", "Ice Cream" };
-    public static int[] prices = { 50, 135, 65, 53 };
+    public static String[] products = { "Bread", "Buckwheat", "Eggs", "Ice Cream", "Rice", "Butter", "Cheese" };
+    public static int[] prices = { 50, 135, 65, 53, 130, 120, 150 };
     public static int MIN_COST_FOR_BONUS = 1000;
 
     public static void main(String[] args) {
